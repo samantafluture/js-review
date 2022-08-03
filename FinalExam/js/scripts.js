@@ -1,6 +1,7 @@
 function validate_user() {
 	var userName = document.getElementById('name').value;
 	var userSex = document.querySelectorAll('input[name="sex"]');
+    var userAge = document.getElementById('age').value;
 
 	if (userName == '') {
 		alert('Visitor name must be filled out!');
@@ -18,7 +19,11 @@ function validate_user() {
 				alert('Birth sex must be chosen!');
 				return false;
 			} else {
-				return true;
+                if (userAge < 18 || userAge > 111) {
+                    alert('Invalid age!');
+                } else {
+                    return true;
+                }
 			}
 		}
 	}
