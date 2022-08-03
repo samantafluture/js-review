@@ -2,7 +2,9 @@ function validate_user() {
 	var userName = document.getElementById('name').value;
 	var userSex = document.querySelectorAll('input[name="sex"]');
     var userAge = document.getElementById('age').value;
-
+    var userPhone = document.getElementById('phone').value;
+    
+    // 1. validate user name
 	if (userName == '') {
 		alert('Visitor name must be filled out!');
 		return false;
@@ -10,72 +12,37 @@ function validate_user() {
 		if (!/^[ ]*[A-Z][a-z]([a-z]|(([ ]+)[A-Z]))*[ ]*$/.test(userName)) {
 			alert('Invalid name!');
 			return false;
+
 		} else {
+            // remove spaces
 			document.getElementById('name').value = userName
 				.replace(/[ ][ ]+/g, ' ')
 				.replace(/(^[ ])|([ ]$)/g, '');
 
+            // 2. validate user sex
 			if (!(userSex[0].checked || userSex[1].checked)) {
 				alert('Birth sex must be chosen!');
 				return false;
+
 			} else {
+
+                // 3. validate user age
                 if (userAge < 18 || userAge > 111) {
                     alert('Invalid age!');
+
                 } else {
-                    return true;
+
+                    // 4. validate user phone by following pattern nn-(nnn)-nnn-nnnn
+                    if (!/^(\d{1,3}-)?(\()?\d{3}(\))?-\d{3}-\d{4}$/.test(userPhone)) {
+                        alert('Invalid phone number!');
+                        return false;
+
+                    } else {
+                        // submit if it's ok
+                        return true;
+                    }
                 }
 			}
 		}
 	}
 }
-
-/*
-function display() { 
-            var checkRadio = document.querySelector(
-                'input[name="GFG"]:checked');
-              
-            if(checkRadio != null) {
-                document.getElementById("disp").innerHTML
-                    = checkRadio.value
-                    + " radio button checked";
-            }
-            else {
-                document.getElementById("disp").innerHTML
-                    = "No one selected";
-            }
-        }
-*/
-
-/*
-function validate() {
-	var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-	
-    if (name == '') {
-		alert('Name cannot be empty!');
-        return false;
-	} else {
-		if (!/^[ ]*[A-Z][a-z]([a-z]|(([ ]+|-)[A-Z]))*[ ]*$/.test(name)) {
-			alert('Invalid name!');	
-            return false;
-		} else {
-            if (email == '') {
-                alert('Email cannot be empty!');
-                return false;
-            } else {
-                if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-                    alert('Invalid email!');
-                    return false;
-                } else {
-                    alert('Thanks for subscribing!');
-
-                    document.getElementById('name').value = '';
-                    document.getElementById('email').value = '';
-
-                    return true;
-                }
-            }
-		}
-	}
-}
-*/
