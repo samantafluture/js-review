@@ -2,12 +2,147 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Montreal - Tourism</title>
 </head>
 <body>
-    
+    <div class="frame">
+        <h1>Montreal - Tourism</h1>
+        <h2>A trip evaluator for a visit</h2>
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Visitor name: *</label>     
+                    </td>
+                    <td>
+                        <input id="name" type="text" placeholder="your name" name="user_name" size="30" max="50">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <legend>Sex: *</legend>
+                    </td>
+                    <td>
+                        <p>
+                            <input id="male" type="radio" name="sex" value="male">
+                            <label for="male">Male</label>
+                        </p>
+                        <p>
+                            <input id="female" type="radio" name="sex" value="female">
+                            <label for="female">Female</label>
+                        </p>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="age">Age: *</label>
+                    </td>
+                    <td>
+                        <input id="age" type="number" name="age" min="0" max="100"> years
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone">Phone: *</label>
+                    </td>
+                    <td>
+                        <input id="phone" type="number" name="phone" placeholder="nn-(nnn)-nnn-nnnn">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <legend>Number:</legend>
+                    </td>
+                    <td>
+                        <select name="number-persons">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span>persons</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <legend>Duration:</legend>
+                    </td>
+                    <td>
+                        <select name="duration">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <span>days</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <legend>Hotel:</legend>
+                    </td>
+                    <td>
+                        <select name="hotel-stars">
+                            <option value="1">1 star</option>
+                            <option value="2">2 stars</option>
+                            <option value="3" selected>3 stars</option>
+                            <option value="4">4 stars</option>
+                            <option value="5">5 stars</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <legend>Room Type:</legend>
+                    </td>
+                    <td>
+                        <select name="room-type" multiple>
+                            <option value="single">Single room</option>
+                            <option value="semi" selected>Semi-suite</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <legend>Activities:</legend>
+                    </td>
+                    <td>
+                        <p>
+                            <input type="checkbox" name="city-bus" id="city-bus">
+                            <label for="city-bus">City-bus-tours Can$ 20</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="spa" id="spa">
+                            <label for="spa">Spa-Manage Can$ 100</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="sport-event" id="sport-event">
+                            <label for="sport-event">Sport Event Can$ 150</label>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" name="b_evaluate">Evaluate</button>
+            <button type="reset" name="b_reset">Reset</button>
+        </form>
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

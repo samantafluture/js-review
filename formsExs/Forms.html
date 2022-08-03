@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form{
+            position:relative
+        }
+        #name {
+            position: absolute;
+            left: 70px;
+        }
+        #pw {
+            position: absolute;
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Text input</h3>
+        Name: <input id="name" type="text" name="user_name" size="8" value="your name" maxlength="20"><br>
+        Password: <input id="pw" type="password" name="user_pass" /><br />
+
+        <h3>Radio button: name should be the same</h3>
+        <input type="radio" name="r_gender" value="male" /> Male adult <br />
+        <input type="radio" name="r_gender" value="female" /> Female adult <br />
+        <input type="radio" name="r_gender" value="infant" checked="checked" /> Infant<br />
+
+        <h3>Check box: name should be the different</h3>
+        <input type="checkbox" name="c_male" value="ok" /> Male adult <br />
+        <input type="checkbox" name="c_female" value="ok" /> Female adult <br />
+        <input type="checkbox" name="c_infant" value="ok" checked="checked" /> Infant<br />
+
+        <h3>Select box: drop-down</h3>
+        <select name="s_box">
+            <option value="s_male">Male adult</option>
+            <option value="s_female" selected="selected">Female adult</option>
+            <option value="s_infant">Infant</option>
+        </select>
+
+        <h3>Select box: scroll</h3>
+        <!-- 
+            The parameter size > 1  or parameter multiple make 
+            the select to be a select box - scroll 
+        -->
+        <select name="s_box" size="4" multiple="multiple">
+            <option value="s_male" selected="selected">Male adult</option>
+            <option value="s_female" selected="selected">Female adult</option>
+            <option value="s_infant1">Infant 1</option>
+            <option value="s_infant2" selected="selected">Infant 2</option>
+            <option value="s_infant3">Infant 3</option>
+            <option value="s_infant4">Infant 4</option>
+        </select>
+
+        <h3>Text Area</h3>
+        <textarea rows="10" cols="80" name="text_area">
+Initial Text
+  x=2
+  y=3 
+        </textarea>
+    </form>
+</body>
+</html>

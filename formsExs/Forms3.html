@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form {
+            position: relative
+        }
+
+        #name {
+            position: absolute;
+            left: 80px;
+        }
+
+        #pw {
+            position: absolute;
+            left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="myAction">    <!-- we must never send passwords by "get". -->                                        
+        <h3> Buttons</h3>
+        Name: <input id="name" type="text" name="user_name" size="8" placeholder="your name" maxlength="20"><br>
+        Password: <input id="pw" type="password" name="user_pass" placeholder="your password" /><br />
+
+        <h3> Buttons defined by input tag</h3>
+        <input type="button" onclick="alert('Hello')" name="b_alert" value="Say Hello" />
+        <input type="submit" name="b_submit" value="Go to Server" />
+        <input type="reset" name="b_reset" value="Reset" /><br>
+
+        <h3> Buttons defined by button tag</h3>
+        <button type="button" onclick="alert('Hello')" name="b_alert" value="Say Hello">
+            <strong>Say Hello</strong>
+        </button>
+        <button type="submit" name="b_submit" value="Go to Server">
+            <strong>Go to Server</strong>
+        </button>
+        <button type="reset" name="b_reset" value="Reset">
+            <strong>Reset</strong>
+        </button>
+    </form>
+</body>
+</html>

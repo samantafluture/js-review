@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form {
+            position: relative
+        }
+
+        .name {
+            position: absolute;
+            left: 70px;
+        }
+
+        #pw {
+            position: absolute;
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3>Text input</h3>
+        Name1: <input class="name" type="text" name="user_name" size="8" maxlength="20" value="your name"><br>
+        Name2: <input class="name" type="text" name="user_name" size="8" maxlength="20" value="your name" onfocus="this.value=''" /><br>
+        Name3: <input class="name" type="text" name="user_name" size="8" maxlength="20" placeholder="your name"><br>
+        Name4: <input class="name" type="text" name="user_name" size="8" maxlength="20" placeholder="your name" onfocus="this.value=''" /><br>
+        <!-- the best practices are represented in Name3 and Name4 -->
+        Password: <input id="pw" type="password" name="user_pass" /><br />
+
+        <h3>Radio button: name should be the same</h3>
+        <input id="rm" type="radio" name="r_gender" value="male"  />
+        <label for="rm">Male adult</label> <br />
+        <input id="rf" type="radio" name="r_gender" value="female"  />
+        <label for="rf">Female adult</label> <br />
+        <input id="ri" type="radio" name="r_gender" value="infant" checked="checked" />
+        <label for="ri">Infant</label><br />
+
+        <h3>Check box: name should be the different</h3>
+        <input id="cm" type="checkbox" name="c_male" value="ok" />
+        <label for="cm">Male adult</label> <br />
+        <input id="cf" type="checkbox" name="c_female" value="ok" />
+        <label for="cf">Female adult</label> <br />
+        <input id="ci" type="checkbox" name="c_infant" value="ok" checked="checked" />
+        <label for="ci">Infant</label><br />
+
+        <h3>Select box: drop-down</h3>
+        <select name="s_box">
+            <option value="s_male">Male adult</option>
+            <option value="s_female" selected="selected">Female adult</option>
+            <option value="s_infant">Infant</option>
+        </select>
+
+        <h3>Select box: scroll</h3>
+        <select name="s_box" size="4" multiple="multiple">
+            <option value="s_male" selected="selected">Male adult</option>
+            <option value="s_female" selected="selected">Female adult</option>
+            <option value="s_infant1">Infant 1</option>
+            <option value="s_infant2" selected="selected">Infant 2</option>
+            <option value="s_infant3">Infant 3</option>
+            <option value="s_infant4">Infant 4</option>
+        </select>
+
+
+    </form>
+</body>
+</html>

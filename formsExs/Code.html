@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    This is an example of code <br>
+
+    <xmp>
+        <p> is the tag for paragraph.
+    </xmp>
+
+    <textarea rows="5" cols="60" readonly="readonly">
+    <p> is the tag for paragraph.
+    </textarea>
+
+    <!-- Those solutions have two problems:
+            1. inside a <xmp></xmp> the text can not have </xmp> and
+                inside <textarea></textarea> the text can not have </textarea>;
+            2. also, any HTML tag placed inside <xmp></xmp> or inside <textarea></textarea>
+                will not be interpreted
+
+            The following example ilustrates those problems.
+        -->
+
+    <div style="background-color: yellow">
+        <xmp>
+            <p> is the tag for <b>paragraph</b>, and
+            </xmp> is the tag to close the example.
+        </xmp>
+    </div>
+
+    <!-- To solve those problems, we use &lt instead of < in the begin
+         of the HTML tags that we don't  want the browser to interpret
+        -->
+
+    <br /><br />
+    <p>
+        &ltp> is the tag for <b>paragraph</b>, and
+        &lt/p> is the tag to close the paragraph.
+    </p>
+
+    <!-- to indicate that we are presenting HTML code, we use the tag
+         <code></code>. It does not prevent interpretation of HTML tags,
+         so it must be used in combination with &lt replacing the < in
+         the tags we don't want the browser to interpret.
+        -->
+
+    <br /><br />
+    <code> &ltp> is the tag for paragraph.</code>
+
+    <code style="display:block; white-space:pre-wrap"> &ltp> is the tag for paragraph.</code>
+
+    <br /><br />
+    <code style="display:block; width: 450px; background-color: yellow">
+        &ltp> is the tag for <b>paragraph</b>, and
+        &lt/code> is the tag to close the code verbatim.
+    </code>
+
+    <br /><br />
+    <code style="display:block; width: 450px; background-color: yellow">
+        <b>&ltcode> &ltp> is the tag for paragraph &lt/code></b> to produce
+        &ltp> is the tag for paragraph.
+    </code>
+
+</body>
+</html>

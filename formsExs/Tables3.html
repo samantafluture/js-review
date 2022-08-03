@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tables</title>
+    <style>
+        table {
+            border: 1px outset black; /* outset is not ridge */
+            height: 100px;
+            /*border-collapse: collapse;*/
+            border-collapse: separate;
+            border-spacing: 5px;
+            background-color: aquamarine;
+        }
+
+        table:first-of-type {
+            width: 650px;
+        }
+
+        table:nth-of-type(2) {
+            width: 80%;
+        }
+
+        tr:first-child {
+            background-color: red;
+        }
+
+        tr:nth-child(2) {
+            background-color: cyan;
+        }
+
+        tr:nth-child(3) {
+            background-color: yellow;
+        }
+
+        th,
+        td {
+            border: 1px inset black; /* inset is not groove */
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <caption>Table 1 : Various tags of table</caption>
+        
+        <tr>
+            <!-- headers row -->
+            <th>Column 1</th> <!-- header -->
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+
+        <tr>
+            <!-- data row -->
+            <td>Data 1</td> <!-- data -->
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+
+        <tr>
+            <!-- data row -->
+            <td colspan="2">New Data 1</td> <!-- column span -->
+            <td>New Data 2</td> <!-- data -->
+        </tr>
+    </table>
+    <br />
+
+    <!-- width in % -->
+    <table>
+        <caption> Table 2 : Width is 80%</caption>
+       
+        <tr>
+            <!-- header row -->
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+
+        <tr>
+            <!-- data row -->
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+
+    </table>
+</body>
+</html>

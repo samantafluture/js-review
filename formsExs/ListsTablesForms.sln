@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListsTablesForms Items", "ListsTablesForms Items", "{E2B70FC9-99F2-46C8-B514-4FC8B6389ED2}"
+	ProjectSection(SolutionItems) = preProject
+		Code.html = Code.html
+		Forms.html = Forms.html
+		Forms1.html = Forms1.html
+		Forms2.html = Forms2.html
+		Forms3.html = Forms3.html
+		HelloToForms.html = HelloToForms.html
+		Lists.html = Lists.html
+		Tables3.html = Tables3.html
+		Tables4.html = Tables4.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10F2ACFC-51D6-4ABD-B0F1-267BBE9998C9}
+	EndGlobalSection
+EndGlobal
