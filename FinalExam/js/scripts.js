@@ -3,13 +3,14 @@ function validate_user() {
 	var userSex = document.querySelectorAll('input[name="sex"]');
     var userAge = document.getElementById('age').value;
     var userPhone = document.getElementById('phone').value;
-    
-    // 1. validate user name
+
+    // 1a. validate user name -> can't be empty
 	if (userName == '') {
 		alert('Visitor name must be filled out!');
 		return false;
 	} else {
-		if (!/^[ ]*[A-Z][a-z]([a-z]|(([ ]+)[A-Z]))*[ ]*$/.test(userName)) {
+        // 1b. validate user name -> match the patterns
+		if (!/^[ ]*[A-Z][a-z]([a-z]|([ ][A-Z][a-z]))+[ ]*$/.test(userName)) {
 			alert('Invalid name!');
 			return false;
 
@@ -33,7 +34,9 @@ function validate_user() {
                 } else {
 
                     // 4. validate user phone by following pattern nn-(nnn)-nnn-nnnn
-                    if (!/^(\d{1,3}-)?(\()?\d{3}(\))?-\d{3}-\d{4}$/.test(userPhone)) {
+                    // \((?:[^)(]+|(?R))*+\)
+
+                    if (!/^(\d{1,3}-)?\(?\d{3}\)?-\d{3}-\d{4}$/.test(userPhone)) {
                         alert('Invalid phone number!');
                         return false;
 

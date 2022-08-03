@@ -12,7 +12,7 @@ if (!(s[0].checked || s[1].checked)) {
     alert("Birth sex must be informed");
     return false;
 } else {
-    return true;
+    return true;****
 }
 
 ## value vs pointers
