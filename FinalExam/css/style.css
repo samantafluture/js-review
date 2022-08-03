@@ -1,6 +1,6 @@
-.frame {
-    background-color: cyan;
-    background: linear-gradient(cyan, #00DDDD);
+.container {
+    background-color: #D1EEEE;
+    /* background: linear-gradient(cyan, #00DDDD); */
     width: 400px;
     margin: 0 auto;
     margin-top: 20px;
@@ -8,17 +8,17 @@
     box-shadow: inset 1px 1px 4px #999999;
 }
 
-.frame h1, h2 {
+.container h1, h2 {
     font-weight: bold;
     text-align: center;
 }
 
-.frame h1 {
+.container h1 {
     font-size: 30px;
     padding-top: 10px;
 }
 
-.frame h2 {
+.container h2 {
     font-size: 20px;
     padding-top: 30px;
 }
@@ -33,12 +33,12 @@ table td {
 }
 
 table td:nth-child(odd) {
-    width: 90px;
+    width: 110px;
     padding-left: 20px;
 }
 
 table tr {
-    transition: font-weight .4s ease-in-out;
+    transition: font-weight .7s ease-in-out;
 }
 
 table tr:hover {

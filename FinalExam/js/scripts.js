@@ -1,3 +1,24 @@
+function validate_user() {
+	var userName = document.getElementById('name').value;
+
+	if (userName == '') {
+		alert('Visitor name must be filled out!');
+		return false;
+	} else {
+		if (!/^[ ]*[A-Z][a-z]([a-z]|(([ ]+)[A-Z]))*[ ]*$/.test(userName)) {
+			alert('Invalid name!');
+			return false;
+		} else {
+			document.getElementById('name').value = userName
+				.replace(/[ ][ ]+/g, ' ')
+				.replace(/(^[ ])|([ ]$)/g, '');
+
+			return true;
+		}
+	}
+}
+
+/*
 function validate() {
 	var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
@@ -29,3 +50,4 @@ function validate() {
 		}
 	}
 }
+*/
