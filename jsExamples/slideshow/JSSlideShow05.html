@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Slide Show Example</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 940px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            /*display: none;*/
+            width: 100%;
+            height: 329px;
+            /* to centralize the paragraph */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;            
+        }
+
+        p {
+            font-size: 30px;
+            font-weight: bold;
+            color: #CCCCCC;                      
+        }
+
+        /*img {
+            vertical-align: middle;
+        }*/
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%; /*vertically in the middle*/
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none; /*it can NOT be sected as a text by the user*/
+        }
+
+        /* Position the "previous button" to the right */
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+         /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+             background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;       /* the same as #F2F2F2 */
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;       /* the same as #F2F2F2 */
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* The dots/bullets/indicators */
+        .dots-container {
+            text-align: center;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #BBBBBB;
+            border-radius: 50%; /*It makes them disks */
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        /* the class active will be added by the JavaScript code to mark the active dot*/
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        /* The prefix -webkit- is for Safari browser */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.4s;
+            animation-name: fade;
+            animation-duration: 1.4s;
+        }
+
+        /* the -webkit-animation fade */
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* the animation fade */
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media (max-width: 300px) {
+            .prev, .next, .text {
+                font-size: 11px
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+
+        <!-- The list of slides, as the list of captions, will be defined by JavaScript  -->
+        <!--
+         The div "slide-container" will allow to re-add the slide BEFORE the anchors "prev" and "next".
+         This makes the anchors visible even during animation.
+    -->
+        <div class="slide-container">
+            <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <p> Example of Slide Show in background </p>
+                <div class="text"></div>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>  <!-- The "<" character -->
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>   <!-- The ">" character -->
+
+        </div>
+        <br>
+
+        <div class="dots-container">
+            <!-- The span elements for the dots will be dynanmically added to DOM by JavaScript -->
+            <!-- The number of dots will depend on the number of slides -->
+        </div>
+
+        <script>
+
+        var slideArray = ["img_nature_wide.jpg", "img_snow_wide.jpg", "img_mountains_wide.jpg"]
+        var captionArray = ["Caption One", "Caption Two", "Caption Three"]
+
+        setupDots();
+
+        var slideIndex = 1;     // slides indexed from 1
+        showSlides(slideIndex);
+
+        var timeout = null;
+        timeout=setTimeout(automaticChange, 7000);  // To avoid automatic slide change, comment this line
+
+        function setupDots() {
+            var i;
+            var dotSet = document.getElementsByClassName("dots-container")[0];
+            for (i = 0; i < slideArray.length; i++) {
+                var dot = document.createElement('span'); // create a new element of type (tag) span
+                dot.className = "dot";                    // give it class="dot"
+                dot.index = i + 1;                        // give it an attribute index to remember its index
+                dot.onclick = function () { currentSlide(this.index) };  // give it the onclick event
+                dotSet.appendChild(dot);                  // add it as a child to to div "dots-container"
+            }
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+            /* if automaticChange is on, reset the timer */
+            if (timeout !== null) {
+                clearTimeout(timeout);
+                timeout = setTimeout(automaticChange, 7000);
+            }
+        }
+
+        function currentSlide(n) {
+            slideIndex = n
+            showSlides(slideIndex);
+            /* if automaticChange is on, reset the timer */
+            if (timeout !== null) {
+                clearTimeout(timeout);
+                timeout = setTimeout(automaticChange, 7000);
+            }
+        }
+
+        function showSlides(n) {
+            //
+            // We use removeChild() / appendChild() to force animation to play
+            // at each change of image.
+            // We use querySelectorAll to create a COPY of the element mySlides
+            // before removing it from the DOM (removeChild()).
+            // We change de src attribute in that copy and we insert the copy into
+            // the DOM (appendChild()).
+            //
+            var i;
+            var slideContainer = document.getElementsByClassName("slide-container")[0];
+            var slide1 = document.getElementsByClassName("mySlides")[0];
+            var slide2 = document.querySelectorAll(".mySlides")[0];
+            var numbertext = document.getElementsByClassName("numbertext")[0];
+            var text = document.getElementsByClassName("text")[0];
+            var dots = document.getElementsByClassName("dot");
+
+            if (n > slideArray.length) { slideIndex = 1 }   // if beyond the last one, go to the first one
+            if (n < 1) { slideIndex = slideArray.length }   // if before the first one, go to the last one
+
+            slideContainer.removeChild(slide1);
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slide2.style.backgroundImage = "url('"+ slideArray[slideIndex - 1]+ "')";
+            numbertext.innerHTML = slideIndex + " / " + slideArray.length;
+            text.innerHTML = captionArray[slideIndex - 1];
+            slide2.style.display = "flex";                  // to continue to centrilize the paragraph
+            slideContainer.appendChild(slide2);
+
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function automaticChange() {
+            slideIndex++;
+            showSlides(slideIndex);
+            timeout=setTimeout(automaticChange, 7000);   // call again automaticChange() after 7s
+        }
+
+        </script>
+
+</body>
+</html>

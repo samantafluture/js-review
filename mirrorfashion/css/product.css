@@ -1,0 +1,149 @@
+
+.colors label::after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+label[for=green]::after {
+    background-color: #33CC66;
+}
+
+label[for=pink]::after {
+    background-color: #FF6666;
+}
+
+label[for=blue]::after {
+    background-color: #6666FF;
+}
+
+.colors input:checked + label::after {
+    border: 6px solid rgba(0,0,0,0.3);
+}
+
+.colors label::after {
+    box-sizing: border-box; /* so border will not grow the disks */
+
+    border: 6px solid rgba(0,0,0,0);
+    transition: 1s;
+}
+
+.colors label:hover::after {
+    border: 6px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.colors input[type="radio"] {
+    display: none;
+}
+
+.colors input:not(:checked) + label img {
+    display: none;
+}
+
+.colors {
+    position: relative;
+    padding-top: 90px;
+}
+
+    .colors label::after {
+        position: absolute;
+        top: 30px;
+    }
+
+label[for=green]::after {
+    left: 0;
+}
+
+label[for=pink]::after {
+    left: 60px;
+}
+
+label[for=blue]::after {
+    left: 120px;
+}
+
+/* because legende is not considered part of <fieldset> */
+
+.colors legend {
+    position: absolute;
+    top: 0;
+}
+
+/* for responsiveness */
+
+.colors label img {
+    display: block;
+    max-width: 100%;
+}
+
+.product {
+    color: #333333;
+    line-height: 1.3;
+    margin-top: 2em;
+}
+
+    .product h1 {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+
+    .product p {
+        font-size: 1.2em;
+        font-style: italic;
+        margin-bottom: 1em;
+    }
+
+    .product legend {
+        display: block;
+        font: bold 0.9em /2.5 Arial;
+        text-transform: uppercase;
+    }
+
+.buy {
+    background-color: #91BD3C;
+    border: none;
+    color: #333333;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    box-shadow: 0 1px 3px #777777;
+    display: block;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+}
+
+/* if it has more than that, i will do the following... */
+@media(min-width: 630px) {
+    .product {
+        position: relative;
+        padding-left: 40%;
+        font-size: 1.2em;
+    }
+
+    .colors {
+        position: static;
+        padding: 0;
+    }
+
+        .colors legend {
+            position: static;
+        }
+
+        .colors label img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            max-width: 35%;
+            max-height: 100%;
+        }
+
+        .colors label::after {
+            position: static;
+            float: left;
+
+            margin-right: 10px;
+        }
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleHTMLCSS.css">
+    <title>Review</title>
+</head>
+<body>
+    <!-- gradient -->
+    <section class="gradient">
+        <h2>Gradient</h2>
+    </section>
+    <!-- end gradient -->
+
+    <!-- shadow -->
+    <section class="shadow">
+        <h2>Shadow</h2>
+        <div id="box">box-shadow</div>
+    </section>
+    <!-- end shadow -->
+
+    <!-- lists -->
+    <section class="lists">
+        <h2>Lists</h2>
+        <ul>
+            Unordered List
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <ul type="circle">
+            Change bullets : 'square', 'circle' or 'disc'
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <ol>
+            Ordered List
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+        <ol type='i'>
+            Change style : 'i', 'I', '1', 'a' or 'A'
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+        <ol type='i' start="5">
+            Start from 'v'
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+        <dl>
+            <dt>Title</dt>
+            <dd>Description</dd>
+        </dl>
+    </section>
+    <!-- end lists -->
+
+    <!-- transform -->
+    <section class="transform">
+        <h2>Transform</h2>
+        <div id="translate">translate</div>
+        <div id="rotate">rotate</div>
+        <div id="scale">scale</div>
+        <div id="skewY">skewY</div>
+    </section>
+    <!-- end transform -->
+
+    <!-- transition -->
+    <section class="transition">
+        <h2>Transition</h2>
+        <div id="easy-in">easy-in</div>
+        <div id="easy-out">easy-out</div>
+    </section>
+    <!-- end transition -->
+
+    <!-- pseudo class -->
+    <section class="pseudo-class">
+        <h2>Pseudo class</h2>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+            <li>Fourth item</li>
+            <li>Fifth item</li>
+        </ul>
+        <a href="#1">First link</a> <br />
+        <a href="#2">Second link</a> <br />
+        <a href="#3">Third link</a> <br />
+    </section>
+    <!-- end of pseudo class -->
+
+    <!-- advanced selectors -->
+    <section class="advanced-selectors">
+        <h2>Advanced selectors</h2>
+        <p> First Paragraph </p>
+    <div>
+        <p> Second paragraph (inside a div)</p>
+        <ul>
+            <li>
+                <p> Third paragraph (inside a list)</p>
+            </li>
+        </ul>
+        <p> Fourth paragraph (inside a div)</p>
+    </div>
+    <p> Fifth paragraph (p immediately after a div; sibling of a div)</p>
+    <p> Sixth paragraph (sibling of a div)</p>
+    <div>
+        <p> Seventh paragraph (inside a div)</p>
+    </div>
+    <p> Eighth paragraph (p immediately after a div; sibling of a div)</p>
+    </section>
+    <!-- end of advanced selectors -->
+
+    <!-- table -->
+    <section class="table">
+        <h2>Table</h2>
+        <table>
+            <tr>
+                <!-- headers row -->
+                <th>Header 1</th> <!-- this is a header -->
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+            <tr>
+                <!-- data/cell row -->
+                <td>Cell 1</td> <!-- this is a cell data -->
+                <td>Cell 2</td>
+                <td>Cell 3</td>
+            </tr>
+            <tr>
+                <!-- data row with colspan -->
+                <td colspan="2">Cell 1 with colspan</td>
+                <td>Cell 2</td>
+                <td>Cell 3</td>
+            </tr>
+        </table>
+    <!-- end of table -->
+
+    <!-- form -->
+    <section class="form">
+        <!-- form simple -->
+        <h2>Form: Simple</h2>
+        <form>
+            <h3>Text input</h3>
+            Name: <input id="name" type="text" name="user_name" size="8" value="your name" maxlength="20"><br>
+            Password: <input id="pw" type="password" name="user_pass" /><br />
+
+            <h3>Radio button: name should be the same</h3>
+            <input type="radio" name="r_gender" value="male" /> Male adult <br />
+            <input type="radio" name="r_gender" value="female" /> Female adult <br />
+            <input type="radio" name="r_gender" value="infant" checked="checked" /> Infant<br />
+
+            <h3>Check box: name should be different</h3>
+            <input type="checkbox" name="c_male" value="ok" /> Male adult <br />
+            <input type="checkbox" name="c_female" value="ok" /> Female adult <br />
+            <input type="checkbox" name="c_infant" value="ok" checked="checked" /> Infant<br />
+
+            <h3>Select box: drop-down</h3>
+            <select name="s_box">
+                <option value="s_male">Male adult</option>
+                <option value="s_female" selected="selected">Female adult</option>
+                <option value="s_infant">Infant</option>
+            </select>
+
+            <h3>Select box: scroll</h3>
+            <select name="s_box" size="4" multiple="multiple">
+                <option value="s_male" selected="selected">Male adult</option>
+                <option value="s_female" selected="selected">Female adult</option>
+                <option value="s_infant1">Infant 1</option>
+                <option value="s_infant2" selected="selected">Infant 2</option>
+                <option value="s_infant3">Infant 3</option>
+                <option value="s_infant4">Infant 4</option>
+            </select>
+
+            <h3>Text Area</h3>
+            <textarea rows="4" cols="40" name="text_area">
+                Initial Text
+                x=2
+                y=3 
+            </textarea>
+        </form>
+        <!-- end of form simple -->
+        <!-- form post method (correct) -->
+        <h2>Form: Post Method</h2>
+        <form method="post" action="HelloToForms.html">   <!-- post will not show the data in the url -->
+            <h3>Buttons</h3>
+            Name: <input id="name" type="text" name="user_name" size="8" placeholder="your name" maxlength="20"><br>
+            Password: <input id="pw" type="password" name="user_pass" /><br />
+    
+            <h3>Buttons defined by input tag</h3>
+            <input type="button" onclick="alert('Hello')" name="b_alert" value="Say Hello" />
+            <input type="submit" name="b_submit" value="Go to HelloToForms" />
+            <input type="reset" name="b_reset" value="Reset" /><br>
+    
+            <h3>Buttons defined by button tag</h3>
+            <button type="button" onclick="alert('Hello')" name="b_alert" value="Say Hello">
+                <strong>Say Hello</strong>
+            </button>
+            <button type="submit" name="b_submit" value="Go to HelloToForms">
+                <strong>Go to HelloToForms</strong>
+            </button>
+            <button type="reset" name="b_reset" value="Reset">
+                <strong>Reset</strong>
+            </button>
+        </form>
+        <!-- end of form post method (correct) -->
+        <!-- form get method (wrong) -->
+        <h2>Form: Get Method</h2> 
+        <form method="get" action="myAction">    <!-- we must never send passwords by "get". -->                                        
+            <h3>Buttons</h3>
+            Name: <input id="name" type="text" name="user_name" size="8" placeholder="your name" maxlength="20"><br>
+            Password: <input id="pw" type="password" name="user_pass" placeholder="your password" /><br />
+    
+            <h3>Buttons defined by input tag</h3>
+            <input type="button" onclick="alert('Hello')" name="b_alert" value="Say Hello" />
+            <input type="submit" name="b_submit" value="Go to Server" />
+            <input type="reset" name="b_reset" value="Reset" /><br>
+    
+            <h3>Buttons defined by button tag</h3>
+            <button type="button" onclick="alert('Hello')" name="b_alert" value="Say Hello">
+                <strong>Say Hello</strong>
+            </button>
+            <button type="submit" name="b_submit" value="Go to Server">
+                <strong>Go to Server</strong>
+            </button>
+            <button type="reset" name="b_reset" value="Reset">
+                <strong>Reset</strong>
+            </button>
+        </form>
+        <!-- end of form get method (wrong) -->
+    <!-- end of form -->
+</body>
+</html>

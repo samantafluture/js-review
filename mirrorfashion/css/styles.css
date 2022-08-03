@@ -1,0 +1,384 @@
+/* global */
+
+body {
+    color: #333333;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 940px;
+}
+
+/* header */
+
+header {
+    position: relative; /* it's placed as browser default */
+}
+
+.shopping-bag {
+    background-image: url(../img/bag.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    font-size: 14px;
+    padding-right: 35px;
+    text-align: right;
+    width: 140px;
+    padding-top: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* header menu */
+
+.menu-options {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+    .menu-options ul {
+        font-size: 15px;
+    }
+
+        .menu-options ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+    .menu-options a {
+        color: #003366;
+    }
+
+/*  sidebar menu */
+
+.search,
+.menu-departments {
+    background-color: #DCDCDC;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+    width: 230px;
+    float: left;
+}
+
+.search {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.menu-departments {
+    clear: left; /* nothing can float to its left */
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+    /* selecting ANY h2 inside .search + 
+    ANY from inside .search + 
+    ANY h2 inside .menu-departments */
+    .search h2,
+    .search form,
+    .menu-departments h2 {
+        margin: 10px;
+    }
+
+    .menu-departments li {
+        background-color: white;
+        margin-bottom: 1px;
+        padding: 5px 10px;
+    }
+
+    .menu-departments a {
+        color: #333333;
+        text-decoration: none;
+    }
+
+/* any element whose tag input has type search and is inside the search class */
+.search input[type=search] {
+    width: 170px;
+    height: 20px; /* default height */
+    border-radius: 10px;
+    border: none;
+}
+
+.search button {
+    background-color: inherit; /* force inherit from the parent */
+    border: 0;
+}
+
+/* banner area */
+
+.highlight {
+    margin-top: 10px;
+}
+
+/* products are */
+
+.panel {
+    margin: 10px 0;
+    padding: 10px;
+    width: 445px;
+}
+
+.news {
+    float: left;
+    background-color: #F5DCDC;
+    background: linear-gradient(#F5DCDC, #BEBEF4); /* progressive enhancement */
+}
+
+.best-sellers {
+    float: right;
+    background-color: #DCDCF5;
+    background: linear-gradient(#DCDCF5,#F4BEBE); /* progressive enhancement */
+    /* a browser that's able to do the gradient will do, if not, it will stop at the color */
+}
+
+.panel li {
+    display: inline-block; /* to be able to adjust size of inline elements */
+    vertical-align: top;
+    width: 140px;
+    margin: 2px;
+    padding-bottom: 10px;
+}
+
+.panel h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.panel a {
+    color: #333333;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* footer */
+
+footer {
+    background-image: url(../img/background-footer.png);
+    clear: both;
+    padding: 20px 0;
+}
+
+.social a {
+    height: 32px;
+    width: 32px;
+    display: block;
+    text-indent: -9999px;
+}
+
+    .social a[href*="facebook.com"] {
+        background-image: url(../img/facebook.png);
+    }
+
+    .social a[href*="twitter.com"] {
+        background-image: url(../img/twitter.png);
+    }
+
+    .social a[href*="plus.google.com"] {
+        background-image: url(../img/googleplus.png);
+    }
+
+footer .container {
+    position: relative;
+}
+
+.social {
+    position: absolute;
+    top: 12px;
+    right: 0;
+}
+
+    .social li {
+        float: left;
+        margin-left: 25px;
+    }
+
+/* sidebar menu -> display submenu */
+
+.menu-options a:hover {
+    color: #007DD6;
+}
+
+.menu-option a:active {
+    color: #867DC6;
+}
+
+.menu-departments li ul {
+    display: none;
+}
+
+.menu-departments li:hover ul {
+    display: block;
+}
+
+.menu-departments ul ul li {
+    background-color: #DCDCDC;
+}
+
+.menu-departments li li a::before {
+    content: "\272A";
+    padding-right: 3px;
+}
+
+/* products title -> add symbol before */
+
+.panel h2:before {
+    content: '\2756';
+    padding-right: 5px;
+    opacity: 0.4;
+}
+
+/* products area -> add shadow and animation */
+
+.panel {
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 4px #999999;
+}
+
+    .panel h2 {
+        text-shadow: 3px 3px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .panel li:hover {
+        box-shadow: 0 0 5px #333333;
+        transition: box-shadow 0.7s;
+    }
+
+.panel li:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px #333;
+    transition: 0.5s;
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* responsiveness */
+
+@media (max-width: 939px) {
+    .container {
+        width: 96%;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+        header h1 img {
+            max-width: 50%;
+        }
+
+    .shopping-bag {
+        display: none;
+    }
+
+    .menu-options {
+        position: static;
+        text-align: center;
+    }
+
+        .menu-options ul li {
+            display: inline-block;
+            margin: 5px;
+        }
+
+    .search,
+    .menu-departments {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .panel {
+        width: auto;
+    }
+
+        .panel li {
+            width: 30%;
+        }
+
+        .panel img {
+            width: 100%;
+        }
+
+    @media (min-width: 480px) {
+        header h1 {
+            margin: 5px 0;
+        }
+
+        .menu-departaments {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+            .menu-departaments nav > ul {
+                column-count: 2;
+            }
+    }
+
+    @media (min-width: 720px) {
+        header h1 {
+            text-align: left;
+        }
+
+        .menu-options {
+            position: absolute;
+        }
+
+        .shopping-bag {
+            display: block;
+        }
+
+        .panel li {
+            width: 15%;
+        }
+
+        .search,
+        .menu-departaments {
+            margin-right: 1%;
+            width: 30%;
+        }
+
+        .menu-departments nav > ul {
+            column-count: 1;
+        }
+    }
+}
+
+/*
+.panel li:nth-child(n+7) {
+    display: none;
+}
+
+.panel-open li:nth-child(n+7) {
+    display: inline-block;
+}
+
+.panel button {
+
+    float: right;
+    margin-right: 10px;
+    padding: 10px;
+
+    background-color: #333;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(30, 30, 30, 0.5);
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    text-shadow: 1px 0 1px black;
+
+    transition: 0.3s;
+}
+
+    .panel button:hover {
+        cursor: pointer;
+        background-color: #464646;
+        box-shadow: 1px 0 20px rgba(200, 200, 120, 0.9);
+    }
+*/
